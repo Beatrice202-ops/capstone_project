@@ -29,4 +29,5 @@ class Reminder(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.reminder_time}"
+    
 
