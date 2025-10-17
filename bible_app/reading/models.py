@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class BibleVerse(models.Model):
     book = models.CharField(max_length=100)
     chapter = models.IntegerField()
-    verse = models.IntegerField()
+    verse = models.CharField(max_length=100)
     text = models.TextField()
 
     def __str__(self):

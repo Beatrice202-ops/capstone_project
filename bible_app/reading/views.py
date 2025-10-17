@@ -1,16 +1,14 @@
-#from django.shortcuts import render
 from rest_framework import viewsets
-from .models import BibleVerse, ReadingPlan, reminders
-from .serializers import BibleVerseserializer, ReadingPlanSerializer, ReminderSerializer
+from .models import BibleVerse, ReadingProgress, Reminder
+from .serializers import BibleVerseSerializer, ReadingProgressSerializer, ReminderSerializer
 
-# Create your views here. 
-class BibleVerseviewsets(viewsets.ModelViewsets):
+class BibleVerseViewSet(viewsets.ModelViewSet):
     queryset = BibleVerse.objects.all()
     serializer_class = BibleVerseSerializer
 
-class ReadingPlanViewSet(viewsets.ModelViewSet):
-    queryset = ReadingPlan.objects.all()
-    serializer_class = ReadingPlanSerializer
+class ReadingProgressViewSet(viewsets.ModelViewSet):
+    queryset = ReadingProgress.objects.all()
+    serializer_class = ReadingProgressSerializer
 
 class ReminderViewSet(viewsets.ModelViewSet):
     queryset = Reminder.objects.all()
