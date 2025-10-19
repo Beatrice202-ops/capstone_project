@@ -25,7 +25,7 @@ class ReadingProgress(models.Model):
 class Reminder(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     reminder_time = models.TimeField()
-    message = models.CharField(max_length=255, default="Time to read your Bible! 🙏")
+    message = models.CharField(max_length=255, default="Time to read your Bible!")
     active = models.BooleanField(default=True)
 
     def __str__(self):
