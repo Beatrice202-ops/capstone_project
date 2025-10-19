@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'reading',
     'rest_framework_simplejwt',
+    'django_crontab',
+    'background_task',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -133,3 +136,9 @@ REST_FRAMEWORK = {
     )
 }
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'uzomabeatrice3@gmail.com'
+EMAIL_HOST_PASSWORD = 'uzoma2021'

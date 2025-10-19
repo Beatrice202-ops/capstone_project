@@ -13,7 +13,7 @@ class BibleVerse(models.Model):
 
 # Track which verses a user has completed
 class ReadingProgress(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE,  null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE,  null=True)
     verse = models.ForeignKey(BibleVerse, on_delete=models.CASCADE)
     completed = models.BooleanField(default=False)
     date_completed = models.DateField(null=True, blank=True)
@@ -25,6 +25,7 @@ class ReadingProgress(models.Model):
 class Reminder(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     reminder_time = models.TimeField()
+    message = models.CharField(max_length=255, default="Time to read your Bible! 🙏")
     active = models.BooleanField(default=True)
 
     def __str__(self):
